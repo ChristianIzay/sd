@@ -1,84 +1,61 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="row align-items-center my-4">
-                    <div class="col">
-                        <h2 class="h3 mb-0 page-title">{{ __('Edit User') }}</h2>
-                    </div>
-                    <div class="col-auto">
+<div>
+        <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
+            <div class="mt-5 md:mt-0 md:col-span-2">
+                <form method="post" action="{{ route('users.update', $user->id) }}">
+                    @csrf
+                    @method('put')
+                    <div class="shadow overflow-hidden sm:rounded-md">
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="name" class="block font-medium text-sm text-gray-700">Name</label>
+                            <input type="text" name="name" id="name" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('name', $user->name) }}" />
+                            @error('name')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                        <a href="{{route('users.index')}}" class="btn btn-primary" style="color:white">
-                            <span style="color:white"></span> {{ __('Back') }}
-                        </a>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="email" class="block font-medium text-sm text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('email', $user->email) }}" />
+                            @error('email')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                    </div>
-                </div>
-                <div class="content-header row">
-                    <div class="content-header-left col-md-12 col-12 mb-2">
-                        <div class="row breadcrumbs-top">
-                            <div class="breadcrumb-wrapper col-12">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{route('home')}}">{{ __('Dashboard') }}</a></li>
-                                    <li class="breadcrumb-item"><a href="{{route('users.index')}}">{{ __('Users') }}</a></li>
-                                    <li class="breadcrumb-item active">{{ __('Edit User') }}</li>
-                                </ol>
-                            </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="password" class="block font-medium text-sm text-gray-700">Password</label>
+                            <input type="password" name="password" id="password" class="form-input rounded-md shadow-sm mt-1 block w-full" />
+                            @error('password')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="roles" class="block font-medium text-sm text-gray-700">Roles</label>
+                            <select name="roles[]" id="roles" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full" multiple="multiple">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"{{ in_array($id, old('roles', $user->roles->pluck('id')->toArray())) ? ' selected' : '' }}>
+                                        {{ $role }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('roles')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+                            <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                                Edit
+                            </button>
                         </div>
                     </div>
-                </div>
-                @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                        <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                        </ul>
-                    </div>
-                @endif
-<div class="card shadow mb-4">
-                    <div class="card-body">
-{!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
-<div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>{{ __('Name') }}:</strong>
-                                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>{{ __('Email') }}:</strong>
-                                    {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>{{ __('Password') }}:</strong>
-                                    {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>{{ __('Confirm Password') }}:</strong>
-                                    {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>{{ __('Role') }}:</strong>
-                                    {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <button type="submit" class="btn btn-warning">{{ __('Edit') }}</button>
-                            </div>
-{!! Form::close() !!}
-                    </div>
-                </div> <!-- / .card -->
-            </div> <!-- .col-12 -->
-        </div> <!-- .row -->
-    </div> <!-- .container-fluid -->
+                </form>
+            </div>
+        </div>
+    </div>
 
 @endsection
