@@ -1,116 +1,131 @@
 @extends('layouts.app')
 
 @section('content')
-{!! Form::hidden('', $compteur= 1) !!}
-    <main class="main-content position-relative max-height-vh-80 h-50 border-radius-lg ">
+    <!-- Button trigger modal -->
+    <!--<button type="button" class="btn btn-primary" >
+                                                                      Launch demo modal
+                                                                    </button> -->
+
+    <!-- Modal -->
+
+
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Navbar</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Recherche</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <!-- Navbar -->
-        <div class="container-fluid py-2">
+
+        <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
                     <div class="card my-4">
-
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <ul class="nav nav-fill ">
-                                    <li class="nav-item">
-                                        <a>
-                                            <i class="	fas fas fa-users"></i>
-                                            <span class="ms-1">Liste utilisateurs</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('form_ajoutuser') }}">
-                                            <i class="	fas fa-user-plus"></i>
-                                            <span class="ms-1">Ajouter un un utilisateur</span>
-                                        </a>
-                                    </li>
+                            <div class="bg-gradient-dark shadow-primary border-radius-lg pt-4 pb-3">
 
-                                </ul>
+                                <a>
+                                    <h6 class="text-white text-capitalize ps-3" class="ms-2">Utilisateurs</h6>
+                                </a>
+                                <div class="text-right">
+                                    <button class="btn btn-success badge-pill" data-bs-toggle="modal"
+                                        data-bs-target="#Ajouter" style=width:100px;> @can('role-create')
+                                            <a href="{{ route('users.create') }}" style="color:white">
+                                                {{ __('Ajouter ') }}
+                                            </a>
+                                        @endcan </button>
+                                </div>
 
                             </div>
-                        </div>
-
-                        <div class="card-body px-0 pb-2">
-                            <div class="table-responsive p-0">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                <h4><i class="	fas fas fa-users"></i> Identité
-                                            </th>
-                                            </h4>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                <h4><i class="	fas fa-edit"></i> Modifier
-                                            </th>
-                                            </h4>
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                <h4> <i class="	fas fa-trash-alt"></i> Suprimer
-                                            </th>
-                                            </h4>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-
-
-                                        @foreach ($users as $user)
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
                                             <tr>
-                                                <td>
-                                                    <div class="d-flex px-2 py-1">
-                                                        <div>
-                                                            <img src="storage/user_images/{{ $user->image }}"
-                                                                class="avatar avatar-sm me-3 border-radius-lg"
-                                                                alt="user1">
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center">
-                                                            <h6 class="mb-0 text-sm">{{ $user->name }}</h6>
-                                                            <h6 class="mb-0 text-sm">{{ $user->email }}</h6>
-                                                            <h6>
-                                                                @if(!empty($user->getRoleNames()))
-                                                                    @foreach($user->getRoleNames() as $v)
-                                                                        {{ $v }}
-                                                                    @endforeach
-                                                                @endif
-                                                            </h6>
-                                                            <p class="text-xs text-secondary mb-0"></p>
-                                                            <p class="text-xs text-secondary mb-0"></p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <a href="#"  data-toggle="modal" data-target="#ModalEdit{{$user->id}}"
-                                                        id="edit">
-                                                        <h3> <span class="badge bg-gradient-secondary"><i
-                                                                    class="	fas fa-edit"></i></span></h3></a>
+                                                <th>#</th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    {{ __('Name') }}
+                                                </th>
+                                                <th
+                                                    class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                    {{ __('email') }}
+                                                </th>
+                                                <th
+                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    {{ __('Roles') }}
+                                                </th>
+                                                <th
+                                                    width="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    {{ __('Action') }}</th>
 
-
-                                                </td>
-                                                <td>
-                                                    <a href="#"   data-toggle="modal" data-target="#ModalDelete{{$user->id}}"
-                                                        id="delete">
-                                                        <h3> <span class="badge bg-gradient-danger"><i
-                                                                    class="	fas fa-trash-alt"></i></span></h3>
-
-
-                                                </td>
-                                                @include('modal.edit_user')
-                                                @include('modal.delete_user')
                                             </tr>
-                                            {!! Form::hidden('', $compteur = $compteur + 1) !!}
+                                        </thead>
+                                        @foreach ($data as $key => $user)
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>{{ $user->id }}</td>
+                                                    <td>{{ $user->name }}</td>
+                                                    <td>{{ $user->email }}</td>
+                                                    <td>
+                                                        @if (!empty($user->getRoleNames()))
+                                                            @foreach ($user->getRoleNames() as $v)
+                                                                {{ $v }}
+                                                            @endforeach
+                                                        @endif
+                                                    </td>
+
+
+
+
+                                                    <td class="align-middle text-left text-sm">
+                                                        <a
+                                                            class="btn btn-primary badge-pill" data-bs-toggle="modal"
+                                                            data-bs-target="#Modifier"
+                                                                href="{{ route('users.show', $user->id) }}">{{ __('Show') }}</a>
+                                                    </td>
+
+                                                    <td class="align-middle text-center text-sm">
+                                                        @can('user-edit')
+                                                            <a class="btn btn-primary badge-pill"
+                                                                href="{{ route('users.edit', $user->id) }}">{{ __('Edit') }}</a>
+                                                        @endcan
+                                                    </td>
+                                                    <td class="align-middle text-center text-sm">
+                                                        
+                                                            @can('user-delete')
+                                                                <form action="{{ url('/users', ['id' => $user->id]) }}"
+                                                                    method="post">
+                                                                    <input class="btn btn-danger badge-pill" data-bs-toggle="modal"
+                                                                    data-bs-target="#Modifier" style=width:100px; type="submit"
+                                                                        value="Delete" />
+                                                                    @method('delete')
+                                                                    @csrf
+                                                                </form>
+                                                            @endcan
+                                                            </a>
+                                                        
+
+
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
                                         @endforeach
-                                    </tbody>
-                                </table>
+                                    </table>
+                                    {!! $data->render() !!}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-@endsection
-
-
-@endsection
+    @endsection

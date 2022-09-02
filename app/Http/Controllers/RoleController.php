@@ -33,7 +33,7 @@ class RoleController extends Controller
     public function create()
     {
         $permission = Permission::get();
-        return view('roles.create',compact('permission'));
+    return view('roles.create',compact('permission'));
     }
 /**
      * Store a newly created resource in storage.
@@ -43,16 +43,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|unique:roles,name',
-            'permission' => 'required',
-        ]);
+        
 
-        $role = Role::create(['name' => $request->input('name')]);
-        $role->syncPermissions($request->input('permission'));
-
-        return redirect()->route('roles.index')
-                        ->with('success','Role created successfully');
+        $role = new Role();
+        $role->name = $request->name;
+        
+        $role->save();
+        $roles = Role::orderBy('id','DESC')->paginate(5);
+        return view('roles.index',compact('roles'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 /**
      * Display the specified resource.
@@ -82,7 +81,7 @@ class RoleController extends Controller
         $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$id)
             ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
             ->all();
-
+    
         return view('roles.edit',compact('role','permission','rolePermissions'));
     }
 /**
@@ -120,4 +119,15 @@ class RoleController extends Controller
         return redirect()->route('roles.index')
                         ->with('success','Role deleted successfully');
     }
+
+   /* public function givePermission(Request $request, Role $role)
+    {
+        if($role->hasPermissionTo($request->permission))
+        {
+            return back()->with('message', 'Permission exists.');
+        
+        }
+        $role->givePermissionTo($request->permission);
+        return back()->with('message', 'Permission add.');
+    }*/
 }

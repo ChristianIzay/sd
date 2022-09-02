@@ -6,36 +6,53 @@
                 <form method="post" action="{{ route('users.update', $user->id) }}">
                     @csrf
                     @method('put')
-                    <div class="shadow overflow-hidden sm:rounded-md">
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="name" class="block font-medium text-sm text-gray-700">Name</label>
-                            <input type="text" name="name" id="name" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>{{ __('Noms') }}:</strong>
+                            <input type="text" name="name" id="name" class="form-control"
                                    value="{{ old('name', $user->name) }}" />
                             @error('name')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
+                        </div>
 
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="email" class="block font-medium text-sm text-gray-700">Email</label>
-                            <input type="email" name="email" id="email" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>{{ __('Email') }}:</strong>
+                            <input type="email" name="email" id="email" class="form-control"
                                    value="{{ old('email', $user->email) }}" />
                             @error('email')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
+                            </div>
                         </div>
 
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="password" class="block font-medium text-sm text-gray-700">Password</label>
-                            <input type="password" name="password" id="password" class="form-input rounded-md shadow-sm mt-1 block w-full" />
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>{{ __('Password') }}:</strong>
+                            <input type="password" name="password" id="password" class="form-control  />
                             @error('password')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>{{ __('Password') }}:</strong>
+                            <input type="confirm-password" name="confirm-password" placeholder="confirm mot de passe"
+                                class="form-control @error('password') is-invalid @enderror">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            </div>
                         </div>
 
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="roles" class="block font-medium text-sm text-gray-700">Roles</label>
-                            <select name="roles[]" id="roles" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full" multiple="multiple">
+                            <select name="roles[]" id="roles" class="form-multiselect block form-control" multiple="multiple">
                                 @foreach($roles as $id => $role)
                                     <option value="{{ $id }}"{{ in_array($id, old('roles', $user->roles->pluck('id')->toArray())) ? ' selected' : '' }}>
                                         {{ $role }}

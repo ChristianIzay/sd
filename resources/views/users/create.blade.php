@@ -36,10 +36,19 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="input-group input-group-outline mb-3">
+                        <input type="confirm-password" name="confirm-password" placeholder="confirm mot de passe"
+                            class="form-control @error('password') is-invalid @enderror">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                     <div class="input-group input-group-outline mb-3">
                         <label for="roles" class="block font-medium text-sm text-gray-700">Roles</label>
-                        <select name="roles[]" id="roles" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full" multiple="multiple">
+                        <select name="roles[]" id="roles" class="form-multiselect block form-control" multiple="multiple">
                             @foreach($roles as $id => $role)
                                 <option value="{{ $id }}"{{ in_array($id, old('roles', [])) ? ' selected' : '' }}>{{ $role }}</option>
                             @endforeach
@@ -53,9 +62,9 @@
 
                     <div class="text-center">
                         <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2"><a
-                                class="nav-link text-white ">Enregistrer</a></button>
+                                class="nav-link text-white ">{{ __('Save') }}</a></button>
                     </div>
-                    </div>
+                    
                 </form>
             </div>
         </div>

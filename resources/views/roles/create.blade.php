@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-auto">
 
-                        <a href="{{route('users.index')}}" class="btn btn-primary" style="color:white">
+                        <a href="{{route('roles.index')}}" class="btn btn-primary" style="color:white">
                             <span style="color:white"></span> {{ __('Back') }}
                         </a>
 
@@ -18,31 +18,47 @@
                 <div>
                     <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
                         <div class="mt-5 md:mt-0 md:col-span-2">
-                            <form method="post" action="{{ route('roles.store') }}">
+                            <form method="POST" action="{{ route('roles.store') }}">
                                 @csrf
-                                <div class="shadow overflow-hidden sm:rounded-md">
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <label for="description" class="block font-medium text-sm text-gray-700">Description</label>
-                                        <input type="text" name="description" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               value="{{ old('description', '') }}" />
-                                        @error('description')
-                                            <p class="text-sm text-red-600">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-
-                                    <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                        <button type="submit" class="btn bg-gradient-primary inline-flex items-center px-4 py-2 bg-blue-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
-                                            Create
-                                        </button>
-                                    </div>
-
+                                <div class="form-group">
+                                    <strong>{{ __('Name') }}:</strong>
+        
+                                    <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text"
+                                        name="name" id="name" value="{{ old('description') }}" required>
+                                    @if ($errors->has('title'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('title') }}
+                                        </div>
+                                    @endif
+        
                                 </div>
-                            </form>
-                        </div>
+        
+                                <div class="form-group">
+        
+                                    @foreach ($permission as $value)
+                                        <br>
+                                        <input class="form-check-input" type="checkbox" value="{{ $value->id }}"
+                                            id="flexCheckDefault" name="permission">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{ $value->name }}
+                                        </label>
+                                        <br>
+                                    @endforeach
+                                </div>
+        
+        
+        
+                            
+                            <div class="form-group">
+                                <button class="btn btn-success" type="submit">
+                                    {{ __('Edit') }}
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                        </div> <!-- .col-12 -->
-        </div> <!-- .row -->
-    </div> <!-- .container-fluid -->
-
-@endsection
+            </div>
+            </div> <!-- .col-12 -->
+            </div> <!-- .row -->
+            </div> <!-- .container-fluid -->
+        @endsection
