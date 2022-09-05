@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Spatie\Activitylog\Models\Activity;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return Activity::all(); //activités logs
     return view('welcome');
 });
 
