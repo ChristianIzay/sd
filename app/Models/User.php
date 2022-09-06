@@ -49,7 +49,8 @@ class User extends Authenticatable
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['name', 'text']);
+        ->logOnly(['name', 'mail'])
+        ->dontLogIfAttributesChangedOnly(['mail']);
         // Chain fluent methods for configuration options
     }
 }

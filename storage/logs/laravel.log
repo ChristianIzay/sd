@@ -2649,3 +2649,96 @@
 #57 D:\\wamp\\www\\kelasi-backend\\server.php(21): require_once('D:\\\\wamp\\\\www\\\\kel...')
 #58 {main}
 "} 
+[2022-09-05 14:15:53] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:16:27] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:17:24] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:17:26] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:18:27] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:19:26] local.ERROR: Declaration of App\Models\User::getActivitylogOptions() must be compatible with Spatie\Activitylog\Traits\LogsActivity::getActivitylogOptions(): Spatie\Activitylog\LogOptions {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Declaration of App\\Models\\User::getActivitylogOptions() must be compatible with Spatie\\Activitylog\\Traits\\LogsActivity::getActivitylogOptions(): Spatie\\Activitylog\\LogOptions at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:49)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:23:29] local.ERROR: syntax error, unexpected identifier "setDescriptionForEvent", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected identifier \"setDescriptionForEvent\", expecting \";\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:52)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:23:30] local.ERROR: syntax error, unexpected identifier "setDescriptionForEvent", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected identifier \"setDescriptionForEvent\", expecting \";\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:52)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:24:29] local.ERROR: syntax error, unexpected identifier "setDescriptionForEvent", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected identifier \"setDescriptionForEvent\", expecting \";\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:52)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:25:28] local.ERROR: syntax error, unexpected identifier "setDescriptionForEvent", expecting ";" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected identifier \"setDescriptionForEvent\", expecting \";\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:52)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:27:18] local.ERROR: syntax error, unexpected token "->" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"->\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:53)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 14:27:38] local.ERROR: syntax error, unexpected token "->" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"->\" at D:\\wamp\\www\\kelasi-backend\\app\\Models\\User.php:53)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 15:18:07] local.ERROR: Class "Eleves" not found {"exception":"[object] (Error(code: 0): Class \"Eleves\" not found at D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php:899)
+[stacktrace]
+#0 D:\\wamp\\www\\kelasi-backend\\database\\migrations\\2022_09_05_150936_create__promotion_table.php(18): Illuminate\\Database\\Schema\\Blueprint->foreignIdFor('Eleves')
+#1 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(226): CreatePromotionTable->{closure}(Object(Illuminate\\Database\\Schema\\Blueprint))
+#2 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(263): Illuminate\\Database\\Schema\\Builder->Illuminate\\Database\\Schema\\{closure}(Object(Illuminate\\Database\\Schema\\Blueprint))
+#3 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(227): tap(Object(Illuminate\\Database\\Schema\\Blueprint), Object(Closure))
+#4 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->create('_promotion', Object(Closure))
+#5 D:\\wamp\\www\\kelasi-backend\\database\\migrations\\2022_09_05_150936_create__promotion_table.php(20): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#6 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(472): CreatePromotionTable->up()
+#7 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod(Object(Illuminate\\Database\\MySqlConnection), Object(CreatePromotionTable), 'up')
+#8 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreatePromotionTable), 'up')
+#10 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp('D:\\\\wamp\\\\www\\\\kel...', 1, false)
+#11 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection(NULL, Object(Closure))
+#15 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#21 D:\\wamp\\www\\kelasi-backend\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 D:\\wamp\\www\\kelasi-backend\\vendor\\symfony\\console\\Application.php(1028): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 D:\\wamp\\www\\kelasi-backend\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 D:\\wamp\\www\\kelasi-backend\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 D:\\wamp\\www\\kelasi-backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 D:\\wamp\\www\\kelasi-backend\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 {main}
+"} 
+[2022-09-05 15:33:38] local.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at D:\\wamp\\www\\kelasi-backend\\app\\Models\\Eleves.php:6)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 15:33:54] local.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at D:\\wamp\\www\\kelasi-backend\\app\\Models\\Eleves.php:6)
+[stacktrace]
+#0 {main}
+"} 
+[2022-09-05 15:34:54] local.ERROR: Namespace declaration statement has to be the very first statement or after any declare call in the script {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Namespace declaration statement has to be the very first statement or after any declare call in the script at D:\\wamp\\www\\kelasi-backend\\app\\Models\\Eleves.php:6)
+[stacktrace]
+#0 {main}
+"} 
