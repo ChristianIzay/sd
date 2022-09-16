@@ -47,7 +47,7 @@
                                                 <th width="280px">{{ __('Action') }}</th>
                                             </tr>
                                         </thead>
-                                        @foreach ($data as $key => $user)
+                                        @foreach ($data as $user)
                                             <tbody>
                                                 <tr>
                                                     <td>{{ $user->id }}</td>
@@ -75,7 +75,7 @@
                                             </tbody>
                                         @endforeach
                                     </table>
-                                    {!! $data->render() !!}
+
                                 <!-- end table -->
                             </div>
                         </div>

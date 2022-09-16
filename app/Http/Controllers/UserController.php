@@ -16,11 +16,11 @@ class UserController extends Controller
         $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
     }
-public function index(Request $request)
+    public function index()
     {
-        $data = User::orderBy('id','DESC')->paginate(20);
-        return view('users.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 20);
+        $data = User::all();
+        return view('users.index',compact('data'));
+
     }
 /**
      * Show the form for creating a new resource.

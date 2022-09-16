@@ -2,19 +2,25 @@
 
 namespace App\Models;
 
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Log;
+use Illuminate\Support\Str;
+
+ use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Haruncpi\LaravelUserActivity\Traits\Loggable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\Activitylog\LogOptions;
+
 
 
 class User extends Authenticatable
 {
-    use HasApiTokens, LogsActivity, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, LogsActivity, Loggable,  HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -46,11 +52,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function enseignant(): HasOne
+    {
+        return $this->hasOne(Enseignant::class);
+    }
+
+    public function eleve(): HasOne
+    {
+        return $this->hasOne(Eleves::class);
+    }
+
+
+    /* */
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['name', 'mail'])
-        ->dontLogIfAttributesChangedOnly(['mail']);
+            ->logOnly(['name', 'email',]);
+
         // Chain fluent methods for configuration options
     }
 }

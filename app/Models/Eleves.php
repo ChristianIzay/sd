@@ -2,15 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Traits\Personable as PersonableTrait;
+
+use App\Models\Promotions;
 
 class Eleves extends Model
 {
-    use HasFactory;
+    use PersonableTrait;
 
-    public function promotions()
+
+
+    protected $primaryKey = 'user_id';
+    protected $fillable = ['address'];
+
+    public function promotions(): BelongsTo
     {
-        return $this->hasMany(Promotion::class);
+
+        //return $this->hasMany(Promotions::class, 'eleve_id', 'id');
+        return $this->belongsTo(Promotions::class);
     }
 }

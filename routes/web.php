@@ -1,8 +1,12 @@
 <?php
 
+use App\Models\Cours;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\Activitylog\Models\Activity;
+use App\Http\Controllers\chartController;
+use App\Http\Controllers\ElevesController;
+use App\Http\Controllers\PromotionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +20,19 @@ use Spatie\Activitylog\Models\Activity;
 */
 
 Route::get('/', function () {
-    return Activity::all(); //activités logs
+    //return Activity::all(); //activités logs
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/promotions/{id}/eleves', [App\Http\Controllers\ElevesController::class, 'show'])->name('eleves.index');
+Route::resource('promotions', PromotionsController::class);
+Route::get('chart-js', [chartController::class, 'index']);
+
+Route::get('/activity', [App\Http\Controllers\ActivitylogController::class, 'index'])->name('activity');
+Route::get('/cours', [App\Http\Controllers\ProfController::class, 'index'])->name('cours');
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', App\Http\Controllers\RoleController::class);
@@ -32,3 +42,4 @@ Route::group(['middleware' => ['auth']], function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -139,6 +139,10 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
             'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
+        'H' => 
+        array (
+            'Haruncpi\\LaravelUserActivity\\' => 29,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -172,12 +176,14 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'C' => 
         array (
             'Cron\\' => 5,
+            'ConsoleTVs\\Charts\\' => 18,
             'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Balping\\JsonRaw\\' => 16,
         ),
         'A' => 
         array (
@@ -441,6 +447,10 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Haruncpi\\LaravelUserActivity\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -517,6 +527,10 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'ConsoleTVs\\Charts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/consoletvs/charts/src',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
@@ -528,6 +542,10 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'Balping\\JsonRaw\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/balping/json-raw-encoder/src',
         ),
         'Asm89\\Stack\\' => 
         array (
@@ -552,6 +570,7 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\ActivitylogController' => __DIR__ . '/../..' . '/app/Http/Controllers/ActivitylogController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -559,8 +578,13 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CoursController' => __DIR__ . '/../..' . '/app/Http/Controllers/CoursController.php',
+        'App\\Http\\Controllers\\ElevesController' => __DIR__ . '/../..' . '/app/Http/Controllers/ElevesController.php',
+        'App\\Http\\Controllers\\EnseignantController' => __DIR__ . '/../..' . '/app/Http/Controllers/EnseignantController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/PermissionController.php',
+        'App\\Http\\Controllers\\ProfController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfController.php',
+        'App\\Http\\Controllers\\PromotionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/PromotionsController.php',
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -574,8 +598,14 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Cours' => __DIR__ . '/../..' . '/app/Models/Cours.php',
         'App\\Models\\Eleves' => __DIR__ . '/../..' . '/app/Models/Eleves.php',
+        'App\\Models\\Enseignant' => __DIR__ . '/../..' . '/app/Models/Enseignant.php',
+        'App\\Models\\Interfaces\\Personable' => __DIR__ . '/../..' . '/app/Models/Interfaces/Personable.php',
+        'App\\Models\\LogActivity' => __DIR__ . '/../..' . '/app/Models/LogActivity.php',
+        'App\\Models\\Prof' => __DIR__ . '/../..' . '/app/Models/Prof.php',
         'App\\Models\\Promotions' => __DIR__ . '/../..' . '/app/Models/Promotions.php',
+        'App\\Models\\Traits\\Personable' => __DIR__ . '/../..' . '/app/Models/Traits/Personable.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Observers\\UserObserver' => __DIR__ . '/../..' . '/app/Observers/UserObserver.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -584,6 +614,9 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Balping\\JsonRaw\\Encoder' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Encoder.php',
+        'Balping\\JsonRaw\\Raw' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Raw.php',
+        'Balping\\JsonRaw\\Replacer' => __DIR__ . '/..' . '/balping/json-raw-encoder/src/Replacer.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -686,6 +719,34 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'ConsoleTVs\\Charts\\ChartsServiceProvider' => __DIR__ . '/..' . '/consoletvs/charts/src/ChartsServiceProvider.php',
+        'ConsoleTVs\\Charts\\Classes\\BaseChart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/BaseChart.php',
+        'ConsoleTVs\\Charts\\Classes\\C3\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/C3/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\C3\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/C3/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Chartjs\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Chartjs/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Chartjs\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Chartjs/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\DatasetClass' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/DatasetClass.php',
+        'ConsoleTVs\\Charts\\Classes\\Echarts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Echarts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Echarts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Echarts/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Frappe\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Frappe/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Frappe\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Frappe/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Fusioncharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Fusioncharts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Fusioncharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Fusioncharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Classes\\Highcharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Highcharts/Chart.php',
+        'ConsoleTVs\\Charts\\Classes\\Highcharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Classes/Highcharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Commands\\ChartsCommand' => __DIR__ . '/..' . '/consoletvs/charts/src/Commands/ChartsCommand.php',
+        'ConsoleTVs\\Charts\\Features\\C3\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/C3/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\C3\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/C3/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Chartjs\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Chartjs/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Chartjs\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Chartjs/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Echarts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Echarts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Echarts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Echarts/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Frappe\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Frappe/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Frappe\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Frappe/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Fusioncharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Fusioncharts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Fusioncharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Fusioncharts/Dataset.php',
+        'ConsoleTVs\\Charts\\Features\\Highcharts\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Highcharts/Chart.php',
+        'ConsoleTVs\\Charts\\Features\\Highcharts\\Dataset' => __DIR__ . '/..' . '/consoletvs/charts/src/Features/Highcharts/Dataset.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -696,6 +757,7 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\ElevesFactory' => __DIR__ . '/../..' . '/database/factories/ElevesFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\CreateAdminUserSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateAdminUserSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
@@ -1689,6 +1751,15 @@ class ComposerStaticInitad87f5a638976615e67a987d660d324a
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'Haruncpi\\LaravelUserActivity\\Console\\UserActivityDelete' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Console/UserActivityDelete.php',
+        'Haruncpi\\LaravelUserActivity\\Console\\UserActivityInstall' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Console/UserActivityInstall.php',
+        'Haruncpi\\LaravelUserActivity\\Controllers\\ActivityController' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Controllers/ActivityController.php',
+        'Haruncpi\\LaravelUserActivity\\EventServiceProvider' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/EventServiceProvider.php',
+        'Haruncpi\\LaravelUserActivity\\Listeners\\LockoutListener' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Listeners/LockoutListener.php',
+        'Haruncpi\\LaravelUserActivity\\Listeners\\LoginListener' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Listeners/LoginListener.php',
+        'Haruncpi\\LaravelUserActivity\\Models\\Log' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Models/Log.php',
+        'Haruncpi\\LaravelUserActivity\\ServiceProvider' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/ServiceProvider.php',
+        'Haruncpi\\LaravelUserActivity\\Traits\\Loggable' => __DIR__ . '/..' . '/haruncpi/laravel-user-activity/src/Traits/Loggable.php',
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Events\\GateEvaluated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Events/GateEvaluated.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
